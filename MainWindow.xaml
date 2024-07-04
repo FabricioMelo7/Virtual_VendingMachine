@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirtualVendingMachine"
+        xmlns:views="clr-namespace:VirtualVendingMachine.Views"
         mc:Ignorable="d"
         Title="Vending Machine" 
         Height="855"
@@ -16,10 +17,15 @@
         Background="Gray"
         Orientation="Horizontal">
 
-        <StackPanel 
-            Width="470">
-            
-            
+        <StackPanel Width="470">
+
+            <views:SlotsView
+                Width="auto"
+                Height="auto"
+                Margin="20 10 5 10"
+                HorizontalAlignment="Center"
+                DataContext="{Binding SlotsViewModel}"/>
+
         </StackPanel>
         
         
