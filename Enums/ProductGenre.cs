@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace VirtualVendingMachine.Enums
 {
-    internal class ProductGenre
+    public enum ProductGenres
     {
+        Online,
+        Adventure,
+        Platform,
+        Dexterity,
+        Family,
+        EuroGames
     }
 }

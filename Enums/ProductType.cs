@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace VirtualVendingMachine.Enums
 {
-    internal class ProductType
+    public enum ProductType
     {
+        Cans,
+        Bottles,
+        Crisps,
+        Chocolate,
+        ComputerGames,
+        BoardGames
     }
 }

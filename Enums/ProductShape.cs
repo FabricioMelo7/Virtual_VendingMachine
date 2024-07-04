@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace VirtualVendingMachine.Enums
 {
-    internal class ProductShape
+    public enum ProductShape
     {
+        Square,
+        Circle,
+        RoundedSquare,
+        Hexagon,
+        SquareRoundTop,
+        SquareRoundBottom
     }
 }
