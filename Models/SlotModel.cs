@@ -48,6 +48,7 @@ namespace VirtualVendingMachine.Models
         public SlotModel(ProductModel product, string ID)
         {
             Product = product;
+            RemainingItemCount = 10;
             SlotID = ID;
         }
         public SlotModel() { }
