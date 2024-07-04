@@ -4,11 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VirtualVendingMachine.Views"
+             xmlns:converters="clr-namespace:VirtualVendingMachine.Converters"
              mc:Ignorable="d" 
              Width="450"
              Height="629"
              Background="Gray">
     <UserControl.Resources>
+        <converters:ProductShapeConverter x:Key="ProductShapeConverter"/>
+        <converters:AlcoholPercentageDisplayConverter x:Key="AlcoholPercentageDisplayConverter"/>
+        <converters:GameProductContentConverter x:Key="GameProductContentConverter"/>
+        <converters:ImprovedBackGroundColorConverter x:Key="ImprovedBackGroundColorConverter"/>
+        <converters:ProductTypeToNeedsMarginConverter x:Key="ProductTypeToIsMarginRequired"/>
 
         <Style TargetType="Path" 
            x:Key="SlotShapePathStyle">
@@ -92,6 +98,61 @@
                                             <Grid>
                                                 <Rectangle Fill="{Binding Product.Color}"
                                                            Style="{StaticResource BackGroundRectangleStyle}"/>
+                                                <!--  SHAPES -->
+                                                <Path Style="{StaticResource SlotShapePathStyle}"
+                                                      Height="75"
+                                                      Width="75"
+                                                      Data="{Binding Product.ProductShape,
+                                                                     Converter={StaticResource ProductShapeConverter}}"/>
+
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding Product.Name}"
+                                                               TextWrapping="Wrap"
+                                                               Width="60">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding Product,
+                                                                                                   Converter={StaticResource ProductTypeToIsMarginRequired}}"
+                                                                                 Value="True">
+                                                                        <Setter Property="Margin"
+                                                                                Value="0 15 0 0"/>                                                                        
+                                                                    </DataTrigger>
+
+                                                                    <DataTrigger Binding="{Binding Product,
+                                                                                                   Converter={StaticResource ProductTypeToIsMarginRequired}}"
+                                                                                 Value="False">
+                                                                        <Setter Property="Margin"
+                                                                                Value="0 25 0 0"/>                                                                        
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                        
+                                                    </TextBlock>
+
+                                                    <StackPanel Visibility="{Binding Product,
+                                                                                     Converter={StaticResource GameProductContentConverter}}">
+                                                        <TextBlock Style="{StaticResource GameProductContentStyle}"
+                                                                   Text="{Binding Product.PEGI_AgeRating}"/>
+
+                                                        <TextBlock Style="{StaticResource GameProductContentStyle}"
+                                                                   Text="{Binding Product.NumberOfPlayers}"/>
+
+                                                        <TextBlock Style="{StaticResource GameProductContentStyle}"
+                                                                   Text="{Binding Product.Genres}"/>
+                                                    </StackPanel>
+
+                                                    <TextBlock VerticalAlignment="Top" 
+                                                               Text="{Binding Product.SizeDisplay}"/>
+
+                                                    <TextBlock Style="{StaticResource ProductContentTextBlockStyle}"
+                                                               Text="{Binding Product.AlcoholLevelDisplay}"
+                                                               Visibility="{Binding Product.AlcoholLevel, 
+                                                                                    Converter={StaticResource AlcoholPercentageDisplayConverter}}"/>
+
+                                                </StackPanel>
+
 
                                             </Grid>
                                         </ControlTemplate>
@@ -100,10 +161,23 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
+
+                    <TextBlock Height="19"
+                               Background="#add8e6"
+                               Foreground="Black"
+                               Text="{Binding CountText}"
+                               TextAlignment="Center" />
+
                 </StackPanel>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
-        
+
+        <ItemsControl.Margin>
+            <Thickness Left="2" 
+                       Top="2" 
+                       Right="2" 
+                       Bottom="2"/>
+        </ItemsControl.Margin>
     </ItemsControl>
     
 </UserControl>
