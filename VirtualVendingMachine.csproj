@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="VirtualVendingMachine.sln" />
+  </ItemGroup>
+
 </Project>

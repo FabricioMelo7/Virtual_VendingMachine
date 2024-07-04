@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VirtualVendingMachine"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Vending Machine" 
+        Height="855"
+        Width="700"
+        Background="White"
+        ResizeMode="NoResize">
+    
+    <StackPanel
+        Margin="25"
+        Background="Gray"
+        Orientation="Horizontal">
 
-    </Grid>
+        <StackPanel 
+            Width="470">
+            
+            
+        </StackPanel>
+        
+        
+    </StackPanel>
+    
 </Window>
