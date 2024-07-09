@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace VirtualVendingMachine.Models
 {
+    [Serializable]
     public class SlotModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -29,12 +31,15 @@ namespace VirtualVendingMachine.Models
             }
         }
 
+        [XmlIgnore]
         public string CountText
         {
             get => RemainingItemCount <= 0 ? "EMPTY" : $"{RemainingItemCount} Available";
         }
 
+        [XmlIgnore]
         private string _SlotID;
+        [XmlIgnore]
         public string SlotID
         {
             get => _SlotID;
@@ -51,6 +56,7 @@ namespace VirtualVendingMachine.Models
             RemainingItemCount = 10;
             SlotID = ID;
         }
+
         public SlotModel() { }
     }
 }

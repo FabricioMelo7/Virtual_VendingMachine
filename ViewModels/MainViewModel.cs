@@ -135,6 +135,7 @@ namespace VirtualVendingMachine.ViewModels
             }
 
             slot.RemainingItemCount--;
+            SlotsViewModel.SerializeToFile();
             KeyPadViewModel.KeyPadDisplayText = string.Empty;
 
             //CountDown

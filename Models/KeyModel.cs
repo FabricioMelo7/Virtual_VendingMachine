@@ -34,5 +34,7 @@ namespace VirtualVendingMachine.Models
         public KeyModel(int entry) : this(entry.ToString())
         {
         }
+
+        public KeyModel() { }
     }
 }
