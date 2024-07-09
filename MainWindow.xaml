@@ -10,7 +10,8 @@
         Height="855"
         Width="700"
         Background="White"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        KeyDown="Window_KeyDown">
     
     <StackPanel
         Margin="25"

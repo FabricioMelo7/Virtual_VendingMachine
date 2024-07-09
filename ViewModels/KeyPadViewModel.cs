@@ -111,7 +111,7 @@ namespace VirtualVendingMachine.ViewModels
             return IsDeleteButtonEnabled;
         }
 
-        private void ClearEnteredKeys(KeyModel? key)
+        public void ClearEnteredKeys(KeyModel? key)
         {
             EnteredKeys.Clear();
             KeyPadDisplayText = string.Empty;
