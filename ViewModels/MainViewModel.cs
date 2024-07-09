@@ -13,11 +13,13 @@ namespace VirtualVendingMachine.ViewModels
 
         public SlotsViewModel SlotsViewModel { get; set; }
         public InventoryModel InventoryModel { get; set; }
+        public KeyPadViewModel KeyPadViewModel { get; set; }
 
         public MainViewModel()
         {
             InventoryModel = new InventoryModel();
             SlotsViewModel = new SlotsViewModel(InventoryModel.ProductList);
+            KeyPadViewModel = new KeyPadViewModel();
         }
     }
 }

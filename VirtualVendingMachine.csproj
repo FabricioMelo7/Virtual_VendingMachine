@@ -9,6 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\AcceptButton.jpg" />
+    <None Remove="Images\AcceptButtonNot.jpg" />
+    <None Remove="Images\CancelButton.jpg" />
+    <None Remove="Images\CancelButtonNot.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\AcceptButton.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\AcceptButtonNot.jpg" />
+    <Resource Include="Images\CancelButton.jpg" />
+    <Resource Include="Images\CancelButtonNot.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="VirtualVendingMachine.sln" />
   </ItemGroup>
 

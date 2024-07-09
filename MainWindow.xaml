@@ -26,9 +26,42 @@
                 HorizontalAlignment="Center"
                 DataContext="{Binding SlotsViewModel}"/>
 
+            <TextBlock
+                Width="264"
+                VerticalAlignment="Bottom"
+                FontSize="12"
+                Foreground="White"
+                Text="{Binding VendingMachineText}" />
+            
         </StackPanel>
-        
-        
+
+        <StackPanel Name="KeysListControl" 
+                    VerticalAlignment="Center"
+                    Grid.Column="0">
+
+            <views:KeyPadView
+                    Width="140"
+                    VerticalAlignment="Center"
+                    DataContext="{Binding KeyPadViewModel}" />
+
+            <Button
+                Width="100"
+                Height="30"
+                Margin="0,5"
+                Command="{Binding SortByNameCommand}"
+                Content="Sort By Name"
+                Focusable="False" />
+
+            <Button
+                 Width="100"
+                 Height="30"
+                 Command="{Binding SortByTypeCommand}"
+                 Content="Sort By Type"
+                 Focusable="False" />
+
+        </StackPanel>
+
+
     </StackPanel>
     
 </Window>
