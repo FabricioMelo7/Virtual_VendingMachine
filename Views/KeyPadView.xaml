@@ -92,7 +92,7 @@
                             <Setter Property="Text" 
                                 Value="{Binding ErrorMessage}" />
                             <Setter Property="Foreground" 
-                                Value="Red" />
+                                Value="Red" /> 
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>

@@ -16,7 +16,7 @@ namespace VirtualVendingMachine.ViewModels
 
         readonly int _requiredPressedKeyCount = 2;
 
-        public readonly string ErrorMessage = "ERROR";
+        public string ErrorMessage { get; } = "Error";
 
         public List<KeyModel> KeysList { get; set; }
         public KeyModel AcceptKey { get; set; }
